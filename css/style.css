@@ -7,6 +7,36 @@ body{
 	margin:0;
 }
 
+
+.right
+{
+  width: 72.5%;
+  padding: 0px;
+  padding-left:0px ;
+  border-style: solid;
+  /* border-width: 2px; */
+  border-top: none;
+  margin:0px;
+  margin-top: 50px;
+  margin-right: 1.25%;
+  float: right;
+}
+.rightwindow
+{
+  width: 100%;
+  padding: 0px;
+  padding-left:0px ;
+  border-style: solid;
+  /* border-width: 2px; */
+  border-top: none;
+  margin:0;
+  float: right;
+}
+.rightWindow .p1
+{
+  padding: 0px;
+}
+
 .logo
 {
     vertical-align: baseline;
@@ -54,6 +84,7 @@ header
     width: 19%;
     text-align: center;
     transition: all 0.4s ease-in;
+    
 }
 
 #navbar ul li a{
@@ -67,19 +98,20 @@ header
 
 #navbar ul li:hover
 {  
-    background: rgb(150, 150 , 150);
-    transition: all 0.4s;
+  background: rgb(150, 150 , 150);
+  transition: all 0.4s;
 }
 
 #navbar ul li:hover .dp1
 {  
+    transition-delay: 1s;
     display: block;
     background: rgb(150, 150 , 150);
     transition: all 0.4s;
 }
 
 .dp1{
-    float: left;
+    /* float: left; */
     display: none;
     position: absolute;
     background: rgb(0, 0, 0);
@@ -87,7 +119,18 @@ header
     transition-delay: 1s;
     transition: 0.4s;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 3;
+}
+.dp2{
+  display: none;
+  float: left;
+  position: relative;
+  background: rgb(0, 0, 0);
+  width: 100%;
+  transition-delay: 1s;
+  transition: 0.4s;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
 }
 #navbar ul li .dp1 ul li{
     background: crimson;
@@ -140,7 +183,7 @@ transition: 0.3s;
 
 
 .sidenav a:hover {
-background-color: rgb(150, 150 , 150);
+  background-color: rgb(150, 150 , 150);
 }
 
 
@@ -242,16 +285,176 @@ margin-left: 10px;
   }
 
 
-  .content {
-    padding: 16px;
+  .searchBar{
+    /* box-sizing: border-box; */
+    /* outline: none; */
+    float: right;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid;
+    border-top: solid;
+    width: 100%;
+    height: 35px;
+    background: white;
   }
+
+  #input{
+    float: right;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    border: none;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background: white;
+  }
+
+  .searchBar .dp2 #books{
+    float: left;
+    list-style: none;
+    padding: 0px;
+    margin: none;
+    width: 100%;
+  }
+
+  .searchBar .dp2 #books li{
+    background: Black;
+    display: none;
+    float: left;
+    width: 100%;
+    height: 10%;
+    padding: 0px;
+    margin: 0px;
+    transition-delay: 1s;
+    transition: 0.4s;
+  }
+
+  .searchBar .dp2 #books li :hover{
+    background: grey;
+    transition-delay: 1s;
+    transition: 0.4s;
+  }
+
+
+  .searchBar .dp2 #books a{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(250, 250 , 250);
+    display: block;
+    transition: 0.3s;
+  }
+
+  /* #books{
+    background: black;
+    color: white;
+    z-index: 1;
+    float: left;
+    display: block;
+    padding: ;
+  } */
+
+  .announcementPanel
+  {
+    overflow-x: auto;
+    padding: none;
+    border-style: solid;
+    border-width: 2px;
+    float: left;
+    margin: 50px 0px 0px 1.5%;
+    width: 22.5%;
+    font-family: arial, sans-serif;
+  }
+
+  .announcementPanel tr
+  {
+    padding: 0 0 5px 0;
+  }
+  .announcementPanel td{
+    text-align: left;
+    padding: 0;
+    width: 100%;
+  }
+  .announcementPanel td a{
+    text-decoration: none;
+    font-family: sans-serif;
+    font-display: bold;
+    float: left;
+    width: 100%;
+    text-align: center;
+    transition: all 0.4s ease-in;
+  }
+  
+  .announcementPanel tr:nth-child(even) {
+    padding: none;
+    background-color: #dddddd;
+  }
+
+
+  .right .rightWindow .bookTable
+  {
+    width: 100%;
+    background: black;
+  }
+
+  .right .rightWindow .bookTable td
+  {
+    transition: 0.4s;
+    text-align: center;
+    width: 25%;
+    height: 200px;
+    border-style: solid;
+    margin: 0px;
+    padding: 2px;
+    overflow: auto;
+  }
+
+  .right .rightWindow .bookTable td img
+  {
+    height: 60%;
+    width: 35%;
+    /* position: relative; */
+    align-self: center;
+    transition: 0.4s;
+  }
+  .right .rightWindow .bookTable td img:hover
+  {
+    transition: 0.4s;
+    box-shadow: darkgray;
+    z-index: 1;
+    height: 75%;
+    width: 50%;
+  }
+
+
+  .right .rightWindow .bookTable tr:nth-child(even)
+  {
+    background-color: white;
+  }
+
+  .right .rightWindow .bookTable tr:nth-child(odd)
+  {
+    background-color: silver;
+  }  
   
   .fixedNav {
     position: fixed;
     top: 0;
     width: 100%;
+
   }
   
   .fixedNav + body {
     padding-top: 60px;
+  }
+
+  textarea:focus, input:focus{
+    outline: none;
   }
