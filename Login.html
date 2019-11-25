@@ -1,0 +1,422 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Lib-Home</title>
+        <link rel="stylesheet" type="text/css" href="style1.css">
+        <script src="script.js"></script>
+    </head>
+	<style>
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+	
+	</style>
+    <body onclick="closeEverything()" onkeyup="closeEverything()">
+        <header>
+            <div class="titlecontainer">
+                <img src ="images/logo.png" class="logo">
+                <h1 class="titletext">Library Systems</h1> 
+            </div> 
+        </header>
+        <nav id="navbar">
+            <div class="container">
+                <ul>
+                    <li id = "sidebar">
+                        <a onclick="openNav();accDisplaySelect();">&#9776;</a>
+                    </li>
+                    <li><a href="#">Subjects</a>
+                        <div class = dp1>
+                            <ul>
+                                <li><a href="#">Anthropology</a></li>
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">Biology</a></li>
+                                <li><a href="#">Chemistry</a></li>
+                                <li><a href="#">Computer Science</a></li>
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">History</a></li>
+                                <li><a href="#">Mathematics</a></li>
+                                <li><a href="#">Physics</a></li>
+                                <li><a href="#">Science</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Categories</a>
+                        <div class = dp1>
+                            <ul>
+                                <li><a href="#">Fiction</a></li>
+                                <li><a href="#">Autobiography</a></li>
+                                <li><a href="#">journals</a></li>
+                                <li><a href="#">Biography</a></li>
+                                <li><a href="#">Acedemic</a></li>
+                                <li><a href="#">CategoryA</a></li>
+                                <li><a href="#">CategoryB</a></li>
+                                <li><a href="#">CategoryC</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#" style="overflow-x: auto;">Reserved Books</a>
+                        <div class = dp1>    
+                            <ul>
+                                <li><a href="#">Fiction</a></li>
+                                <li><a href="#">Autobiography</a></li>
+                                <li><a href="#">journals</a></li>
+                                <li><a href="#">Biography</a></li>
+                                <li><a href="#">Acedemic</a></li>
+                                <li><a href="#">CategoryA</a></li>
+                                <li><a href="#">CategoryB</a></li>
+                                <li><a href="#">CategoryC</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Locations</a>
+                        <div class = dp1>
+                            <ul>
+                                <li><a href="#">Fiction</a></li>
+                                <li><a href="#">Autobiography</a></li>
+                                <li><a href="#">journals</a></li>
+                                <li><a href="#">Biography</a></li>
+                                <li><a href="#">Acedemic</a></li>
+                                <li><a href="#">CategoryA</a></li>
+                                <li><a href="#">CategoryB</a></li>
+                                <li><a href="#">CategoryC</a></li>
+                            </ul>
+                        </div>
+                    </li>   
+                    <li><a href="#">Contact us</a>
+                        <div class = dp1>
+                            <ul>
+                                <li><a href="#">Fiction</a></li>
+                                <li><a href="#">Autobiography</a></li>
+                                <li><a href="#">journals</a></li>
+                                <li><a href="#">Biography</a></li>
+                                <li><a href="#">Acedemic</a></li>
+                                <li><a href="#">CategoryA</a></li>
+                                <li><a href="#">CategoryB</a></li>
+                                <li><a href="#">CategoryC</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="sideNav" class="sidenav">
+                <a class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#" id="profile">Profile</a>
+				
+				
+				<a onclick="document.getElementById('id02').style.display='block'" id="signupPrompt" >Sign Up</a>
+				<div id="id02" class="modal">
+				  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+				  <form class="modal-content" action="/action_page.php">
+						<div class="imgcontainer">
+							<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+							<img src="Profile_Icon.jpg" alt="Profile_Icon" class="Profile_Icon">
+						</div>
+					<div class="container">
+					  <h1>Sign Up</h1>
+					  <p>Claim your ID</p>
+					  <hr>
+					  <label for="email"><b>UM Email</b></label>
+					  <input type="text" placeholder="  UMNETID@myumanitoba.ca " name="email" required >
+					  <label for="psw"><b>Password</b></label>
+					  <input type="password" placeholder="  Password " id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+					  
+					  <input type="checkbox" checked="unchecked" name="remember" style="margin-bottom:15px"> Remember me
+					  </label>
+					  <div class="clearfix">
+						<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+						<button type="submit" class="signupbtn">Sign Up</button>
+						
+					  </div>
+					  <div id="message">
+  <h3>Password must contain the following:</h3>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+</div>
+					</div>
+				  </form>
+				</div>
+				
+				
+				
+				<a onclick="document.getElementById('id01').style.display='block'" id="loginPrompt" >Login</a>
+				<div id="id01" class="modal">
+					<form class="modal-content animate" >
+						<div class="imgcontainer">
+							<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+							<img src="Profile_Icon.jpg" alt="Profile_Icon" class="Profile_Icon">
+						</div>
+							<div class="container">
+							<label for="uname"><b>Username</b></label>
+							<input type="text" placeholder="Enter username" name="uname" required autofocus>
+							<label for="psw"><b>Password</b></label>
+							<input type="password" placeholder="  Password " id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+					 
+							<button type="submit" onclick="setlogin();">Login</button>
+							
+							<label>
+								<input type="checkbox" checked="checked" name="remember"> Remember me
+							</label>
+							
+						</div>
+						<div class="container" style="background-color:#f1f1f1">
+						  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+						  <span class="psw">Forgot Password?</span>
+						</div>
+						<div id="message">
+						<h3>Password must contain the following:</h3>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+</div>
+					</form>
+				</div>	
+				
+				<a href="#">query1</a>
+                <a href="#">query2</a>
+                <a href="#">query3</a>
+                <a id="logout" onclick="setlogout()">Logout</a>
+                <div class = "calender" id= cdr>
+                    <div class="month">      
+                        <ul>
+                            <li class="prev">&#10094;</li>
+                            <li class="next">&#10095;</li>
+                            <li>
+                            January<br>
+                            2019
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <ul class="days">
+                    <li>Mo</li>
+                    <li>Tu</li>
+                    <li>We</li>
+                    <li>Th</li>
+                    <li>Fr</li>
+                    <li>Sa</li>
+                    <li>Su</li>
+                    </ul>
+                    
+                    <ul class="dates">  
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li><span class="active">10</span></li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li><span class="due">22</span></li>
+                    <li>23</li>
+                    <li>24</li>
+                    <li>25</li>
+                    <li>26</li>
+                    <li>27</li>
+                    <li>28</li>
+                    <li>29</li>
+                    <li>30</li>
+                    <li>31</li>
+                    </ul>
+                </div>
+        </div>
+        
+        <div class="announcementPanel">
+            <table>
+                <tr><td><a href="#">announcement1</a><td></tr>
+                <tr><td><a href="#">announcement2</a></td></tr>
+            </table>
+        </div> 
+        
+        <div class="right">
+            <div class="searchBar">
+                <input type = "text" id="input" placeholder="Search" onclick="displayMatches()" onkeyup="displayMatches()">
+                <div class="dp2" id = "inputDp">
+                    <ul id = "books">
+                        <li><a href="#">Programming Pearls</a></li>
+                        <li><a href="#">science</a></li>
+                        <li><a href="#">music</a></li>
+                        <li><a href="#">humanities</a></li>
+                        <li><a href="#">bruh</a></li>
+                        <li><a href="#">hmmmmmm</a></li>
+                        <li><a href="#">running</a></li>
+                        <li><a href="#">out</a></li>
+                        <li><a href="#">of</a></li>
+                        <li><a href="#">names</a></li>
+                    </ul>
+                </div>
+            </div>
+        
+
+            <div class="rightWindow">
+                <table class="bookTable">
+                    <tr>
+                        <td><img src="images/book1.jpg" alt="time of witches"><br> A time of the Witches</td>
+                        <td><img src="images/2.jpg" alt="time of witches"><br>The design Hustle</td>
+                        <td><img src="images/3.jpg" alt="time of witches"><br>Very nice</td>
+                        <td><img src="images/4.jpg" alt="time of witches"><br>Creative business startup</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/5.jpg" alt="time of witches"><br>Programming Pearls</td>
+                        <td><img src="images/6.jpg" alt="time of witches"><br>Humanities</td>
+                        <td><img src="images/7.jpg" alt="time of witches"><br>A begining guide to Humanities</td>
+                        <td><img src="images/8.jpg" alt="time of witches"><br>How to build life in Humanities</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/9.webp" alt="time of witches"><br>Out of the box</td>
+                        <td><img src="images/10.jpg" alt="time of witches"><br>Book</td>
+                        <td><img src="images/11.jpg" alt="time of witches"><br>The poison Killer</td>
+                        <td><img src="images/12.jpg" alt="time of witches"><br>The swallow</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/13.jpg" alt="time of witches"><br>the arsonist</td>
+                        <td><img src="images/14.png" alt="time of witches"><br>The sun, The moon and the stars</td>
+                        <td><img src="images/15.jpg" alt="time of witches"><br>The Last Smile</td>
+                        <td><img src="images/16.jpg" alt="time of witches"><br>Modest Independence</td>
+                    </tr>
+                </table>
+                <!-- <p1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique saepe ullam cupiditate eaque nobis eos eum assumenda recusandae nostrum repellat. Quo, cupiditate officiis? Consectetur, quasi! Quaerat dolore sapiente corrupti harum.</p1>
+                <p1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam blanditiis soluta ratione, ab nostrum quod fugit eos facilis officiis earum dolor magni vero consectetur aliquam necessitatibus autem animi! Omnis, fugit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel corporis ab reiciendis aliquid quibusdam odit ipsa commodi expedita architecto fugit molestias dicta nisi, veniam facilis. Dicta ab nostrum laboriosam. Eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic provident aspernatur eius placeat ab autem quis nostrum necessitatibus eos explicabo aut vel earum quam, quia maxime non voluptatem nihil? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, vitae impedit fugiat velit delectus optio. Iure, provident quia mollitia cupiditate, quo excepturi in ad nihil qui aliquam voluptate vitae rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate cumque impedit sapiente fugit, ratione nulla quod dicta placeat sequi deleniti facilis suscipit nesciunt. Distinctio, blanditiis! Veritatis consequuntur dolore laboriosam vero! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus ratione esse quos commodi, cupiditate excepturi eum tempora, dolorem totam suscipit ipsa laudantium numquam sapiente laborum dolores minus unde eos itaque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam molestiae nesciunt ut sequi, odit, laudantium deserunt ipsum illo est ipsa cupiditate rem ea fuga culpa consequuntur dolore, ad ex quisquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, assumenda beatae, ratione modi molestias atque aperiam eos quis laudantium perspiciatis excepturi fuga. Dignissimos sed ab dolorem quibusdam dicta fugiat natus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae dolor dolorum tenetur id neque, natus recusandae obcaecati doloremque similique voluptate nobis voluptatibus hic accusantium molestiae tempora eius iste ducimus aliquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia adipisci error non amet minus, optio, dolorum exercitationem sequi asperiores cumque natus cum officia vero laborum tempora voluptas quibusdam iure at. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, error dicta facere esse iusto obcaecati nam, accusantium voluptatem est exercitationem itaque, harum nostrum debitis cum dolorem recusandae? Minus, quae beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit assumenda excepturi iste, facere eos esse nihil unde magni aspernatur quasi reiciendis fuga ut optio. Nostrum neque earum temporibus dolorum excepturi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam quos saepe animi aliquid dolore ea recusandae. Neque molestias adipisci minus autem aliquid perspiciatis, temporibus cupiditate magni, tenetur id non quo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam commodi unde tenetur quos quo expedita omnis voluptate saepe reiciendis necessitatibus enim quod, ipsa modi vero illo? Aliquam veritatis ullam hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae commodi velit dolore iusto quis debitis, blanditiis fugit, quasi harum inventore ipsam labore aliquid, ipsum dolorem repellendus suscipit ducimus deserunt laborum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, accusamus quam itaque dignissimos mollitia corrupti assumenda aliquid doloribus esse a alias magni iusto voluptate, maxime quidem consectetur, minus voluptatum ut! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet ut vitae a odit tenetur enim quod, nam et debitis provident beatae ab omnis necessitatibus excepturi delectus consequatur nobis. Quod, ea? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quisquam odit obcaecati fugit odio sunt cumque maxime perspiciatis a. Aperiam, quas? Mollitia commodi recusandae rerum eius ab dicta nostrum hic. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ipsum ratione excepturi quidem vero, quaerat nulla fugiat, voluptas necessitatibus impedit eaque hic deserunt a est qui. Amet, maxime et! Suscipit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ratione laudantium corrupti maiores excepturi dignissimos officiis beatae commodi minus molestiae ut voluptatem, dolorem debitis. Obcaecati minima dolore alias sint neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis hic quam tempore labore reiciendis reprehenderit vitae quo officiis repellendus molestiae non itaque nam quod excepturi quisquam qui, dolorum eaque possimus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, hic voluptatum. Odio non, aliquid aspernatur consequuntur porro animi repudiandae suscipit eius a culpa, eaque nulla fugit blanditiis placeat rem consequatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aut tempore aliquid quo repellendus, atque distinctio labore velit nam quia inventore quisquam eos magnam libero. Quo ut aliquam voluptas provident! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, ullam maiores doloremque delectus adipisci voluptas deserunt aperiam ratione recusandae possimus excepturi maxime voluptatum officia aliquid illum, odit soluta magni praesentium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque id explicabo porro obcaecati accusantium amet, vero maiores atque aperiam quasi fugiat! Quis error molestias delectus harum similique at beatae ad? Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt ipsa adipisci animi consequuntur voluptatum maiores, dolore voluptatem officia voluptatibus excepturi accusantium eius deleniti et quia id fuga, blanditiis atque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. At praesentium ut sed reiciendis, magni iure, earum iusto impedit in, nobis eaque doloremque tempore cumque ad perspiciatis labore laboriosam numquam? Voluptates. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum porro mollitia distinctio dolorem, suscipit aliquid similique atque? Excepturi totam nisi libero necessitatibus nulla vel, quisquam aliquam delectus pariatur consequatur atque. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum velit quasi sequi impedit dignissimos optio dolore repellat, officia maxime dolor veniam assumenda quidem? Est aspernatur, autem hic reiciendis commodi veritatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, dignissimos dolorum mollitia quia nemo error debitis perspiciatis quas? Perspiciatis, rerum eos! Accusantium cupiditate aperiam rem quas, distinctio cum deleniti eveniet? Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque numquam architecto debitis voluptatem, atque perspiciatis itaque recusandae quia sunt beatae aut temporibus soluta dolorem. Dicta distinctio odio animi repudiandae vel.</p1> -->
+            </div> 
+
+        </div>
+
+        <script>
+            window.onscroll = function() {this.navBarControl()};
+            var navbar = document.getElementById("navbar");
+            var reachedTop = navbar.offsetTop;
+            var body = document.getElementsByClassName("right");
+
+            function navBarControl() {
+                if (window.pageYOffset >= reachedTop) {
+                    navbar.classList.add("fixedNav");
+                } else {
+                    navbar.classList.remove("fixedNav");
+                }
+            }
+			
+			// Get the modal
+			var modal = document.getElementById('id01');
+			var modal1 = document.getElementById('id02');
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) 
+			{
+				if (event.target == modal) 
+				{
+					modal.style.display = "none";
+				}
+				else if (event.target == modal1) 
+				{
+					modal1.style.display = "none";
+				}
+				
+			}
+			var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {  
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {  
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+        </script>
+    </body>
+</html>
