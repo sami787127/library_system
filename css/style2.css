@@ -1,0 +1,104 @@
+#bookInfo
+{
+
+    position: relative;
+    background-color: #FEC823;
+    width: 70%;
+    height: auto;
+    padding: 1%;
+    z-index: 1;
+    border: none;
+    margin: 50px 1.25% 0px 0px;
+    float: right;
+    box-shadow: 0 4px 8px 10px rgba(0,0,0,0.16);
+
+}
+
+#image
+{
+    position: relative;
+    width: 20%;
+    height: 20%;
+    padding: 1%;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#image img
+{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 0 2px 4px 0px rgba(0,0,0,0.16);
+}
+
+
+.centerText{
+    position: relative;
+    text-align: center;
+}
+
+#bookMeta
+{
+
+    font-family: "Courier New", serif;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #D2FC6B;
+    width: 70%;
+    height: 20%;
+    padding: 1%;
+    border: none;
+    float: bottom;
+    box-shadow: 0 2px 4px 0px rgba(0,0,0,0.16);
+    color:  #0d3300;
+;
+}
+
+
+.material-icons {
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    display: block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    line-height: 2;
+    background-color:  #BC8F03;
+    color: darkblue;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    box-shadow: 0 2px 4px 0px rgba(0,0,0,0.16);
+	
+}
+
+.material-icons:hover, .material-icons:active{
+	    font-weight: bold;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    display: block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    line-height: 2;
+    background-color:  gray;
+    color: darkblue;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    box-shadow: 0 2px 4px 0px rgba(0,0,0,0.16);
+	cursor: pointer;
+	
+}
