@@ -73,12 +73,15 @@ function accDisplaySelect()
         document.getElementById("loginPrompt").style.display="none";
         document.getElementById("logout").style.display="block";
         document.getElementById("cdr").style.display="block";
+        document.getElementById("signupPrompt").style.display="none";
+
     }
     else{
         document.getElementById("profile").style.display="none";
         document.getElementById("loginPrompt").style.display="block";
         document.getElementById("logout").style.display="none";
         document.getElementById("cdr").style.display="none";
+        document.getElementById("signupPrompt").style.display="block";
     }
 }
 
