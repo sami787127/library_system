@@ -1,4 +1,7 @@
-let login = false;
+if(window.sessionStorage.getItem("login")==undefined)
+{
+    window.sessionStorage.setItem("login", "false");
+}
 let closedp = true;
 
 function closeEverything()
@@ -21,12 +24,12 @@ document.getElementById("sideNav").style.width = "0";
 
 function setlogin()
 {
-    login = true;
+    window.sessionStorage.setItem("login", "true");
     accDisplaySelect();
 }
 function setlogout()
 {
-    login = false;
+    window.sessionStorage.setItem("login", "false");
     accDisplaySelect();
 }
 
@@ -65,7 +68,7 @@ function displayMatches()
 
 function accDisplaySelect()
 {
-    if(login){
+    if(window.sessionStorage.getItem("login")=="true"){
         document.getElementById("profile").style.display="block";
         document.getElementById("loginPrompt").style.display="none";
         document.getElementById("logout").style.display="block";
@@ -78,5 +81,7 @@ function accDisplaySelect()
         document.getElementById("cdr").style.display="none";
     }
 }
+
+
 
 
