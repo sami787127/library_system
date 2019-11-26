@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+<head>
+    <title>Lib-Home</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style2.css">
+    <script src="../script.js"></script>
+</head>
+
+<body onclick="closeEverything()" onkeyup="closeEverything()">
+<header>
+    <div class="titlecontainer">
+        <img src ="../images/logo.png" class="logo">
+        <h1 class="titletext">Library Systems</h1>
+    </div>
+</header>
+<nav id="navbar">
+    <div class="container">
+        <ul>
+            <li id = "sidebar">
+                <a onclick="openNav();accDisplaySelect();">&#9776;</a>
+            </li>
+            <li><a href="#">Subjects</a>
+                <div class = dp1>
+                    <ul>
+                        <li><a href="#">Anthropology</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Biology</a></li>
+                        <li><a href="#">Chemistry</a></li>
+                        <li><a href="#">Computer Science</a></li>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Mathematics</a></li>
+                        <li><a href="#">Physics</a></li>
+                        <li><a href="#">Science</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Categories</a>
+                <div class = dp1>
+                    <ul>
+                        <li><a href="#">Fiction</a></li>
+                        <li><a href="#">Autobiography</a></li>
+                        <li><a href="#">journals</a></li>
+                        <li><a href="#">Biography</a></li>
+                        <li><a href="#">Acedemic</a></li>
+                        <li><a href="#">CategoryA</a></li>
+                        <li><a href="#">CategoryB</a></li>
+                        <li><a href="#">CategoryC</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#" style="overflow-x: auto;">Reserved Books</a>
+                <div class = dp1>
+                    <ul>
+                        <li><a href="#">Fiction</a></li>
+                        <li><a href="#">Autobiography</a></li>
+                        <li><a href="#">journals</a></li>
+                        <li><a href="#">Biography</a></li>
+                        <li><a href="#">Acedemic</a></li>
+                        <li><a href="#">CategoryA</a></li>
+                        <li><a href="#">CategoryB</a></li>
+                        <li><a href="#">CategoryC</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Locations</a>
+                <div class = dp1>
+                    <ul>
+                        <li><a href="#">Fiction</a></li>
+                        <li><a href="#">Autobiography</a></li>
+                        <li><a href="#">journals</a></li>
+                        <li><a href="#">Biography</a></li>
+                        <li><a href="#">Acedemic</a></li>
+                        <li><a href="#">CategoryA</a></li>
+                        <li><a href="#">CategoryB</a></li>
+                        <li><a href="#">CategoryC</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Contact us</a>
+                <div class = dp1>
+                    <ul>
+                        <li><a href="#">Fiction</a></li>
+                        <li><a href="#">Autobiography</a></li>
+                        <li><a href="#">journals</a></li>
+                        <li><a href="#">Biography</a></li>
+                        <li><a href="#">Acedemic</a></li>
+                        <li><a href="#">CategoryA</a></li>
+                        <li><a href="#">CategoryB</a></li>
+                        <li><a href="#">CategoryC</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="sideNav" class="sidenav">
+    <a class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#" id="profile">profile</a>
+    <a href="#" id="loginPrompt" onclick="setlogin()">login</a>
+    <a href="#">query1</a>
+    <a href="#">query2</a>
+    <a href="#">query3</a>
+    <a id="logout" onclick="setlogout()">logout</a>
+    <div class = "calender" id= cdr>
+        <div class="month">
+            <ul>
+                <li class="prev">&#10094;</li>
+                <li class="next">&#10095;</li>
+                <li>
+                    January<br>
+                    2019
+                </li>
+            </ul>
+        </div>
+
+        <ul class="days">
+            <li>Mo</li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+            <li>Su</li>
+        </ul>
+
+        <ul class="dates">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li><span class="active">10</span></li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li><span class="due">22</span></li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+            <li>31</li>
+        </ul>
+    </div>
+</div>
+
+<div class="announcementPanel">
+    <table>
+        <tr><td><a href="#">announcement1</a><td></tr>
+        <tr><td><a href="#">announcement2</a></td></tr>
+    </table>
+</div>
+
+
+<div id="bookInfo">
+    <h3 class="centerText">Out of the box</h3>
+    <div id="image"><img src="../images/9.jpg" alt = "Out of the box"></div>
+
+    <div id="bookMeta">
+        <p>
+            <span style="color: blue">Edition:</span>
+            2nd</p>
+
+        <p>
+            <span style="color: blue">Author:</span> Jon Bentley</p>
+        <p>
+            <span style="color: blue">Summary:</span>
+            A guide to practical programming techniques and design principles,
+            with information on such topics as testing, debugging and timing,
+            set representations, and string problems.</p>
+        <p>
+            <span style="color: blue">ISBN:</span>
+            09718044</p>
+        <p>
+            <span style="color: blue">Publisher:</span>
+            Addison-Wesley Professional</p>
+        <p>
+            <span style="color: blue">ISBN:</span>
+            09718044</p>
+        <p>
+            <span style="color: blue">Reservations:</span>
+            <span style="color: darkgreen">Available</span></p>
+
+        <i id="button" class="material-icons" onclick="reserveBook()" style="color:lightblue;text-shadow:2px 2px 4px #000000;">Reserve</i>
+
+        <p id="reserveMessage"></p>
+
+    </div>
+
+    <script>
+        function reserveBook() {
+           var message = 'You have successfully reserved the book';
+           var element =document.getElementById("button");
+           element.parentNode.removeChild(element);
+           var messageObj = document.getElementById("reserveMessage");
+
+           messageObj.innerHTML = message;
+           messageObj.style.color = "#0d3300";
+           messageObj.style.fontFamily = "helvetica";
+           messageObj.style.fontStyle = "italic";
+           messageObj.style.textDecoration = "underline";
+           messageObj.style.textAlign = "center";
+        }
+    </script>
+
+</div>
+
+
+<script>
+   window.onscroll = function() {this.navBarControl()};
+   var navbar = document.getElementById("navbar");
+   var reachedTop = navbar.offsetTop;
+   var body = document.getElementsByClassName("right");
+
+   function navBarControl() {
+      if (window.pageYOffset >= reachedTop) {
+         navbar.classList.add("fixedNav");
+      } else {
+         navbar.classList.remove("fixedNav");
+      }
+   }
+</script>
+</body>
+</html>
