@@ -93,7 +93,7 @@ function findQuery()
     table = document.getElementById("bookTable");
     items = table.getElementsByTagName("td");
 
-    document.getElementById("inputDp").style.display="block";
+    // document.getElementById("inputDp").style.display="block";
     inputUC = input.value.toUpperCase();
     for (let i = 0; i < items.length; i++) {
         a = items[i].getElementsByTagName("a")[0];
@@ -104,4 +104,35 @@ function findQuery()
             items[i].style.display = "none";
         }
     }
+}
+
+function findQuerySS()
+{
+    let input, inputUC, table, items, a, txt;
+    let currInput = sessionStorage.getItem("input");
+    if(currInput!=null)
+    {
+        input = currInput;
+        table = document.getElementById("bookTable");
+        items = table.getElementsByTagName("td");
+
+        // document.getElementById("inputDp").style.display="block";
+        inputUC = input.toUpperCase();
+        for (let i = 0; i < items.length; i++) {
+            a = items[i].getElementsByTagName("a")[0];
+            txt = a.textContent || a.innerText;
+            if (txt.toUpperCase().indexOf(inputUC) > -1) {
+                items[i].style.display = "block";
+            } else {
+                items[i].style.display = "none";
+            }
+        }
+        sessionStorage.setItem("input", null);
+    }
+}
+
+function SSin()
+{
+    let currInput = document.getElementById("input").value;
+    sessionStorage.setItem("input", currInput);
 }
