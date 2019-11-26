@@ -37,7 +37,7 @@ function setlogout()
 function displayMatches()
 {
 
-    let input, filterUC, list, items, a, txt;
+    let input, inputUC, list, items, a, txt;
     input = document.getElementById("input");
     list = document.getElementById("books");
     items = list.getElementsByTagName("li");
@@ -85,6 +85,22 @@ function accDisplaySelect()
     }
 }
 
+function findQuery()
+{
+    let input, inputUC, table, items, a, txt;
+    input = document.getElementById("input");
+    table = document.getElementById("bookTable");
+    items = table.getElementsByTagName("td");
 
-
-
+    document.getElementById("inputDp").style.display="block";
+    inputUC = input.value.toUpperCase();
+    for (let i = 0; i < items.length; i++) {
+        a = items[i].getElementsByTagName("a")[0];
+        txt = a.textContent || a.innerText;
+        if (txt.toUpperCase().indexOf(inputUC) > -1) {
+            items[i].style.display = "block";
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+}

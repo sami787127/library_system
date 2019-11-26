@@ -6,48 +6,11 @@
         <link rel="stylesheet" type="text/css" href="style1.css">
         <script src="script.js"></script>
     </head>
-	<style>
-#message {
-  display:none;
-  background: #f1f1f1;
-  color: #000;
-  position: relative;
-  padding: 20px;
-  margin-top: 10px;
-}
 
-#message p {
-  padding: 10px 35px;
-  font-size: 18px;
-}
-
-/* Add a green text color and a checkmark when the requirements are right */
-.valid {
-  color: green;
-}
-
-.valid:before {
-  position: relative;
-  left: -35px;
-  content: "✔";
-}
-
-/* Add a red text color and an "x" when the requirements are wrong */
-.invalid {
-  color: red;
-}
-
-.invalid:before {
-  position: relative;
-  left: -35px;
-  content: "✖";
-}
-	
-	</style>
     <body onclick="closeEverything()" onkeyup="closeEverything()">
         <header>
             <div class="titlecontainer">
-                <img src ="images/logo.png" class="logo">
+                <img src ="logo.png" class="logo">
                 <h1 class="titletext">Library Systems</h1> 
             </div> 
         </header>
@@ -274,17 +237,31 @@
                 </div>
         </div>
         
-        <div class="announcementPanel" id = "panel">
-            <table>
-                <tr><td><a href="#">announcement1</a><td></tr>
-                <tr><td><a href="#">announcement2</a></td></tr>
-            </table>
+        <div class="sortPanel" id="sPanel">
+				<p>Sort by tag:</p>
+					<label>
+						<input type="checkbox" name="remember"> Tag1
+						<p></p>
+						<input type="checkbox" name="remember"> Tag2
+						<p></p>
+						<input type="checkbox" name="remember"> Tag3
+						<p></p>
+						<input type="checkbox" name="remember"> Tag4
+						<p></p>
+						<input type="checkbox" name="remember"> Tag1
+						<p></p>
+						<input type="checkbox" name="remember"> Tag2
+						<p></p>
+						<input type="checkbox" name="remember"> Tag3
+						<p></p>
+						<input type="checkbox" name="remember"> Tag4	
+					</label>
         </div> 
         
-        <div class="right" id = "rightSide">
+        <div class="right" id="rightSide">
             <div class="searchBar">
-                <a href="SearchFinal.html"><button type="submit" onclick="displayMatches()"><i class="fa fa-search"></i></button></a>
-                <input type = "text" id="input" placeholder="Search" onkeyup="displayMatches()">
+                <button type="submit" onclick="findQuery();"><i class="fa fa-search"></i></button>
+                <input type = "text" id="input" placeholder="Search" onclick="displayMatches()" onkeyup="displayMatches()">
                 <div class="dp2" id = "inputDp">
                     <ul id = "books">
                         <li><a href="#">A time of the witches</a></li>
@@ -303,36 +280,37 @@
                         <li><a href="#">The sun, The moon and the stars</a></li>
                         <li><a href="#">The Last Smile</a></li>
                         <li><a href="#">Modest Independence</a></li>
+
                     </ul>
                 </div>
             </div>
         
 
             <div class="rightWindow">
-                <table class="bookTable">
+                <table class="bookTable" id="bookTable">
                     <tr>
-                        <td><img src="images/book1.jpg" alt="time of witches"><br> A time of the Witches</td>
-                        <td><img src="images/2.jpg" alt="time of witches"><br>The design Hustle</td>
-                        <td><img src="images/3.jpg" alt="time of witches"><br>Very nice</td>
-                        <td><img src="images/4.jpg" alt="time of witches"><br>Creative business startup</td>
+                        <td><a href="#"><img src="book1.jpg" alt="time of witches"><br> A time of the Witches</a></td>
+                        <td><a href="#"><img src="2.jpg" alt="time of witches"><br>The design Hustle</a></td>
+                        <td><a href="#"><img src="3.jpg" alt="time of witches"><br>Very nice</a></td>
+                        <td><a href="#"><img src="4.jpg" alt="time of witches"><br>Creative business startup</a></td>
                     </tr>
                     <tr>
-                        <td><img src="images/5.jpg" alt="time of witches"><br>Programming Pearls</td>
-                        <td><img src="images/6.jpg" alt="time of witches"><br>Humanities</td>
-                        <td><img src="images/7.jpg" alt="time of witches"><br>A begining guide to Humanities</td>
-                        <td><img src="images/8.jpg" alt="time of witches"><br>How to build life in Humanities</td>
+                        <td><a href="#"><img src="5.jpg" alt="time of witches"><br>Programming Pearls</a></td>
+                        <td><a href="#"><img src="6.jpg" alt="time of witches"><br>Humanities</a></td>
+                        <td><a href="#"><img src="7.jpg" alt="time of witches"><br>A begining guide to Humanities</a></td>
+                        <td><a href="#"><img src="8.jpg" alt="time of witches"><br>How to build life in Humanities</a></td>
                     </tr>
                     <tr>
-                        <td><img src="images/9.webp" alt="time of witches"><br>Out of the box</td>
-                        <td><img src="images/10.jpg" alt="time of witches"><br>Book</td>
-                        <td><img src="images/11.jpg" alt="time of witches"><br>The poison Killer</td>
-                        <td><img src="images/12.jpg" alt="time of witches"><br>The swallow</td>
+                        <td><a href="#"></a><img src="9.webp" alt="time of witches"><br>Out of the box</a></td>
+                        <td><a href="#"><img src="10.jpg" alt="time of witches"><br>Book</a></td>
+                        <td><a href="#"><img src="11.jpg" alt="time of witches"><br>The poison Killer</a></td>
+                        <td><a href="#"><img src="12.jpg" alt="time of witches"><br>The swallow</a></td>
                     </tr>
                     <tr>
-                        <td><img src="images/13.jpg" alt="time of witches"><br>the arsonist</td>
-                        <td><img src="images/14.png" alt="time of witches"><br>The sun, The moon and the stars</td>
-                        <td><img src="images/15.jpg" alt="time of witches"><br>The Last Smile</td>
-                        <td><img src="images/16.jpg" alt="time of witches"><br>Modest Independence</td>
+                        <td><a href="#"><img src="13.jpg" alt="time of witches"><br>the arsonist</a></td>
+                        <td><a href="#"><img src="14.png" alt="time of witches"><br>The sun, The moon and the stars</a></td>
+                        <td><a href="#"><img src="15.jpg" alt="time of witches"><br>The Last Smile</a></td>
+                        <td><a href="#"><img src="16.jpg" alt="time of witches"><br>Modest Independence</a></td>
                     </tr>
                 </table>
                 <!-- <p1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique saepe ullam cupiditate eaque nobis eos eum assumenda recusandae nostrum repellat. Quo, cupiditate officiis? Consectetur, quasi! Quaerat dolore sapiente corrupti harum.</p1>
@@ -345,7 +323,7 @@
             window.onscroll = function() {this.navBarControl()};
             var navbar = document.getElementById("navbar");
             var reachedTop = navbar.offsetTop;
-            var body = document.getElementById("panel");
+            var body = document.getElementById("sPanel");
             var r = document.getElementById("rightSide");
 
             function navBarControl() {
@@ -359,80 +337,6 @@
                     body.classList.remove("aPanel");
                     body.style.marginTop="50px";
                     r.style.marginTop="50px";
-                }
-            }
-			
-			// Get the modal
-			var modal = document.getElementById('id01');
-			var modal1 = document.getElementById('id02');
-			// When the user clicks anywhere outside of the modal, close it
-			window.onclick = function(event) 
-			{
-				if (event.target == modal) 
-				{
-					modal.style.display = "none";
-				}
-				else if (event.target == modal1) 
-				{
-					modal1.style.display = "none";
-				}
-				
-			}
-			var myInput = document.getElementById("psw");
-            var letter = document.getElementById("letter");
-            var capital = document.getElementById("capital");
-            var number = document.getElementById("number");
-            var length = document.getElementById("length");
-
-            // When the user clicks on the password field, show the message box
-            myInput.onfocus = function() {
-            document.getElementById("message").style.display = "block";
-            }
-
-            // When the user clicks outside of the password field, hide the message box
-            myInput.onblur = function() {
-            document.getElementById("message").style.display = "none";
-            }
-
-            // When the user starts to type something inside the password field
-            myInput.onkeyup = function() {
-            // Validate lowercase letters
-                var lowerCaseLetters = /[a-z]/g;
-                if(myInput.value.match(lowerCaseLetters)) {  
-                    letter.classList.remove("invalid");
-                    letter.classList.add("valid");
-                } else {
-                    letter.classList.remove("valid");
-                    letter.classList.add("invalid");
-                }
-                
-                // Validate capital letters
-                var upperCaseLetters = /[A-Z]/g;
-                if(myInput.value.match(upperCaseLetters)) {  
-                    capital.classList.remove("invalid");
-                    capital.classList.add("valid");
-                } else {
-                    capital.classList.remove("valid");
-                    capital.classList.add("invalid");
-                }
-
-                // Validate numbers
-                var numbers = /[0-9]/g;
-                if(myInput.value.match(numbers)) {  
-                    number.classList.remove("invalid");
-                    number.classList.add("valid");
-                } else {
-                    number.classList.remove("valid");
-                    number.classList.add("invalid");
-                }
-                
-                // Validate length
-                if(myInput.value.length >= 8) {
-                    length.classList.remove("invalid");
-                    length.classList.add("valid");
-                } else {
-                    length.classList.remove("valid");
-                    length.classList.add("invalid");
                 }
             }
         </script>
