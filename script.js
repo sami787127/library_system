@@ -16,6 +16,7 @@ function closeEverything()
 
 function openNav() {
 document.getElementById("sideNav").style.width = "24%";
+document.getElementById("sideNav").style.boxShadow = "5px 10px 18px rgba(0,0,0,0.16)";
 }
 
 function closeNav() {
