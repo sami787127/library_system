@@ -2,12 +2,50 @@
 <html>
 <head>
     <title>Lib-Home</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/style2.css">
+    <link rel="stylesheet" type="text/css" href="../style1.css">
     <script src="../script.js"></script>
 </head>
+<style>
+    #message {
+        display:none;
+        background: #f1f1f1;
+        color: #000;
+        position: relative;
+        padding: 20px;
+        margin-top: 10px;
+    }
 
+    #message p {
+        padding: 10px 35px;
+        font-size: 18px;
+    }
+
+    /* Add a green text color and a checkmark when the requirements are right */
+    .valid {
+        color: green;
+    }
+
+    .valid:before {
+        position: relative;
+        left: -35px;
+        content: "✔";
+    }
+
+    /* Add a red text color and an "x" when the requirements are wrong */
+    .invalid {
+        color: red;
+    }
+
+    .invalid:before {
+        position: relative;
+        left: -35px;
+        content: "✖";
+    }
+
+</style>
 <body onclick="closeEverything()" onkeyup="closeEverything()">
 <header>
     <div class="titlecontainer">
@@ -93,18 +131,97 @@
                     </ul>
                 </div>
             </li>
+
+            <li id = "hmBtn">
+                <a href="../Login.html" onclick="accDisplaySelect();"><i class="fa fa-home"></i></a>
+            </li>
+
         </ul>
     </div>
 </nav>
 
 <div id="sideNav" class="sidenav">
     <a class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#" id="profile">profile</a>
-    <a href="#" id="loginPrompt" onclick="setlogin()">login</a>
+    <a href="#" id="profile">Profile</a>
+
+
+    <a onclick="document.getElementById('id02').style.display='block'" id="signupPrompt" >Sign Up</a>
+    <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content" action="/action_page.php">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="../Profile_Icon.jpg" alt="Profile_Icon" class="Profile_Icon">
+            </div>
+            <div class="LOcontainer">
+                <h1>Sign Up</h1>
+                <p>Claim your ID</p>
+                <hr>
+                <label for="email"><b>UM Email</b></label>
+                <input type="text" placeholder="  UMNETID@myumanitoba.ca " name="email" required >
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="  Password " id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+                <input type="checkbox" checked="unchecked" name="remember" style="margin-bottom:15px"> Remember me
+                </label>
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                    <button class="btnA" type="submit" class="signupbtn">Sign Up</button>
+
+                </div>
+                <div id="message">
+                    <h3>Password must contain the following:</h3>
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+    <a onclick="document.getElementById('id01').style.display='block'" id="loginPrompt" >Login</a>
+    <div id="id01" class="modal">
+        <form class="modal-content animate" >
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="../Profile_Icon.jpg" alt="Profile_Icon" class="Profile_Icon">
+            </div>
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter username" name="uname" required autofocus>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="  Password " id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+
+                <button class="btnA" type="submit" onclick="setlogin();", onclick="document.getElementById('id01').style.display='none';">Login</button>
+
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot Password?</span>
+            </div>
+            <div id="message">
+                <h3>Password must contain the following:</h3>
+                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                <p id="number" class="invalid">A <b>number</b></p>
+                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            </div>
+        </form>
+    </div>
+
     <a href="#">query1</a>
     <a href="#">query2</a>
     <a href="#">query3</a>
-    <a id="logout" onclick="setlogout()">logout</a>
+    <a id="logout" onclick="setlogout()">Logout</a>
     <div class = "calender" id= cdr>
         <div class="month">
             <ul>
@@ -163,13 +280,12 @@
     </div>
 </div>
 
-<div class="announcementPanel">
+<div class="announcementPanel" id = "panel">
     <table>
         <tr><td><a href="#">announcement1</a><td></tr>
         <tr><td><a href="#">announcement2</a></td></tr>
     </table>
 </div>
-
 
 <div id="bookInfo">
     <h3 class="centerText">A time of the Witches</h3>
@@ -207,19 +323,19 @@
     </div>
 
     <script>
-        function reserveBook() {
-           var message = 'You have successfully reserved the book';
-           var element =document.getElementById("button");
-           element.parentNode.removeChild(element);
-           var messageObj = document.getElementById("reserveMessage");
+       function reserveBook() {
+          var message = 'You have successfully reserved the book';
+          var element =document.getElementById("button");
+          element.parentNode.removeChild(element);
+          var messageObj = document.getElementById("reserveMessage");
 
-           messageObj.innerHTML = message;
-           messageObj.style.color = "#0d3300";
-           messageObj.style.fontFamily = "helvetica";
-           messageObj.style.fontStyle = "italic";
-           messageObj.style.textDecoration = "underline";
-           messageObj.style.textAlign = "center";
-        }
+          messageObj.innerHTML = message;
+          messageObj.style.color = "#0d3300";
+          messageObj.style.fontFamily = "helvetica";
+          messageObj.style.fontStyle = "italic";
+          messageObj.style.textDecoration = "underline";
+          messageObj.style.textAlign = "center";
+       }
     </script>
 
 </div>
@@ -229,13 +345,94 @@
    window.onscroll = function() {this.navBarControl()};
    var navbar = document.getElementById("navbar");
    var reachedTop = navbar.offsetTop;
-   var body = document.getElementsByClassName("right");
+   var body = document.getElementById("panel");
+   var r = document.getElementById("rightSide");
 
    function navBarControl() {
       if (window.pageYOffset >= reachedTop) {
          navbar.classList.add("fixedNav");
+         body.classList.add("aPanel");
+         body.style.marginTop="81px";
+         r.style.marginTop="81px";
       } else {
          navbar.classList.remove("fixedNav");
+         body.classList.remove("aPanel");
+         body.style.marginTop="50px";
+         r.style.marginTop="50px";
+      }
+   }
+
+   // Get the modal
+   var modal = document.getElementById('id01');
+   var modal1 = document.getElementById('id02');
+   // When the user clicks anywhere outside of the modal, close it
+   window.onclick = function(event)
+   {
+      if (event.target == modal)
+      {
+         modal.style.display = "none";
+      }
+      else if (event.target == modal1)
+      {
+         modal1.style.display = "none";
+      }
+
+   }
+   var myInput = document.getElementById("psw");
+   var letter = document.getElementById("letter");
+   var capital = document.getElementById("capital");
+   var number = document.getElementById("number");
+   var length = document.getElementById("length");
+
+   // When the user clicks on the password field, show the message box
+   myInput.onfocus = function() {
+      document.getElementById("message").style.display = "block";
+   }
+
+   // When the user clicks outside of the password field, hide the message box
+   myInput.onblur = function() {
+      document.getElementById("message").style.display = "none";
+   }
+
+   // When the user starts to type something inside the password field
+   myInput.onkeyup = function() {
+      // Validate lowercase letters
+      var lowerCaseLetters = /[a-z]/g;
+      if(myInput.value.match(lowerCaseLetters)) {
+         letter.classList.remove("invalid");
+         letter.classList.add("valid");
+      } else {
+         letter.classList.remove("valid");
+         letter.classList.add("invalid");
+      }
+
+      // Validate capital letters
+      var upperCaseLetters = /[A-Z]/g;
+      if(myInput.value.match(upperCaseLetters)) {
+         capital.classList.remove("invalid");
+         capital.classList.add("valid");
+      } else {
+         capital.classList.remove("valid");
+         capital.classList.add("invalid");
+      }
+
+      // Validate numbers
+      var numbers = /[0-9]/g;
+      if(myInput.value.match(numbers)) {
+         number.classList.remove("invalid");
+         number.classList.add("valid");
+      } else {
+         number.classList.remove("valid");
+         number.classList.add("invalid");
+      }
+
+      // Validate length
+      if(myInput.value.length >= 8) {
+         length.classList.remove("invalid");
+         length.classList.add("valid");
+      } else {
+         length.classList.remove("valid");
+         length.classList.add("invalid");
       }
    }
 </script>
